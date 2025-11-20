@@ -12,11 +12,17 @@ export const routes: Routes = [
             },
             {
                 path: 'users',
-                loadComponent: () => import('@users/pages').then(m => m.UsersPage)
-            },
-            {       
-                path: 'favourite-users',
-                loadComponent: () => import('@users/pages').then(m => m.FavouriteUsersPage)
+                loadComponent: () => import('@users/pages').then(m => m.UsersRootPage),
+                children: [
+                    {
+                        path: '',
+                        loadComponent: () => import('@users/pages').then(m => m.UsersPage)
+                    },
+                    {
+                        path: 'favourites',
+                        loadComponent: () => import('@users/pages').then(m => m.FavouriteUsersPage)
+                    }
+                ]
             }
         ]
     }

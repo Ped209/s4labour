@@ -6,10 +6,10 @@ namespace CoreApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(IRandomUserApiClient randomUserApiClient, ILogger<UserController> logger) : ControllerBase
+    public class UsersController(IRandomUserApiClient randomUserApiClient, ILogger<UsersController> logger) : ControllerBase
     {
         private readonly IRandomUserApiClient _randomUserApiClient = randomUserApiClient;
-        private readonly ILogger<UserController> _logger = logger;
+        private readonly ILogger<UsersController> _logger = logger;
 
         [HttpGet]
         public async Task<IActionResult> Get()
