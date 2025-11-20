@@ -1,1 +1,11 @@
-<p>users works!</p>
+<mat-card> 
+    <mat-card-header>
+        <h1>Users</h1>
+    </mat-card-header>
+    <app-users-list [users]="usersService.users"></app-users-list>
+    <mat-card-content>
+        @if( usersService.users().length === 0 ) {
+            No users found. 
+        }
+    </mat-card-content>
+</mat-card>

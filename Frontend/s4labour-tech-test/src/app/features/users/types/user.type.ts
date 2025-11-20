@@ -11,6 +11,7 @@ export interface User {
   id: UserId;
   picture: UserPicture;
   nat: string;
+  isFavourite: boolean;
 }
 
 export interface UserName {

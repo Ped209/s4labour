@@ -6,6 +6,11 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+:root {
+  --mat-table-background-color: transparent;
+  --mat-sys-outline: #d1d1d1;
+}
+
 html {
   @include mat.theme((
     color: (
