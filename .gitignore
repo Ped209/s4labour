@@ -31,6 +31,7 @@ yarn-error.log*
 Backend/CoreApi/.vs/
 Backend/CoreApi/CoreApi/bin/
 Backend/CoreApi/CoreApi/obj/
+Backend/CoreApi/CoreApi/CoreApi.csproj.user
 
 # Frontend
 Frontend/s4labour-tech-test/.vscode/
