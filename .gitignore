@@ -28,6 +28,13 @@ yarn-debug.log*
 yarn-error.log*
 
 # Backend
-Backend/CoreApi/.vs/*
-Backend/CoreApi/CoreApi/bin/*
-Backend/CoreApi/CoreApi/obj/*
+Backend/CoreApi/.vs/
+Backend/CoreApi/CoreApi/bin/
+Backend/CoreApi/CoreApi/obj/
+
+# Frontend
+Frontend/s4labour-tech-test/.vscode/
+Frontend/s4labour-tech-test/dist/
+Frontend/s4labour-tech-test/out-tsc/
+Frontend/s4labour-tech-test/coverage/
+Frontend/s4labour-tech-test/package-lock.json
