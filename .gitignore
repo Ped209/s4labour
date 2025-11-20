@@ -26,3 +26,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Backend
+Backend/CoreApi/.vs/*
+Backend/CoreApi/CoreApi/bin/*
+Backend/CoreApi/CoreApi/obj/*
