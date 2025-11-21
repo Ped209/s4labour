@@ -21,6 +21,10 @@ export const routes: Routes = [
                     {
                         path: 'favourites',
                         loadComponent: () => import('@users/pages').then(m => m.FavouriteUsersPage)
+                    },
+                    {
+                        path: ':id',
+                        loadComponent: () => import('@users/pages').then(m => m.UserDetailsPage)
                     }
                 ]
             }

@@ -1,0 +1,43 @@
+@if( user() ) {
+<div class="layout">
+    <div class="left-column">
+        <mat-card class="profile">
+            <img [src]="user()?.picture?.large" alt="{{ user()?.name?.first }} {{ user()?.name?.last }}"
+                class="profile-image">
+            <mat-card-content>
+                <h1>{{ user()?.name?.first }} {{ user()?.name?.last }}</h1>
+                <hr/>
+                <p><mat-icon>email</mat-icon> {{ user()?.email }}</p>
+                <p><mat-icon>phone</mat-icon> {{ user()?.phone }}</p>
+                <p><mat-icon>smartphone</mat-icon> {{ user()?.cell }}</p>
+                <hr/>
+                <app-button-favourite-user [user]="user()!"></app-button-favourite-user>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="right-column">
+        <mat-card>
+            <mat-card-content>
+                <h2>Location</h2>
+                <p>{{ user()?.location?.street?.number }} 
+                    {{ user()?.location?.street?.name }}, 
+                    {{ user()?.location?.city }}, {{ user()?.location?.state }}, 
+                    {{ user()?.location?.country }}, {{ user()?.location?.postcode }}</p>
+                <h2>Additional Information</h2>
+                <p><strong>Date of Birth:</strong> {{ user()?.dob?.date | date }} (Age: {{ user()?.dob?.age }})</p>
+                <p><strong>Registered On:</strong> {{ user()?.registered?.date | date }} (Since: {{
+                    user()?.registered?.age }} years)</p>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                <h2>Notes</h2>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+} @else {
+
+}

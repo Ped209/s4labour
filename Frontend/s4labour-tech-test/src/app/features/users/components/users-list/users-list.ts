@@ -1,4 +1,5 @@
-import { Component, effect, Input, Signal } from '@angular/core';
+import { Component, effect, inject, Input, Signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { User } from '@users/types';
 import { ButtonFavouriteUser } from '../button-favourite-user/button-favourite-user';
@@ -10,6 +11,7 @@ import { ButtonFavouriteUser } from '../button-favourite-user/button-favourite-u
   styleUrl: './users-list.scss',
 })
 export class UsersList {
+  private router = inject(Router);
 
   @Input({ required: true }) users!: Signal<User[]>;
 
@@ -20,5 +22,9 @@ export class UsersList {
     effect(() => {
       this.dataSource.data = this.users();
     });
+  }
+
+  navigateToUser(user: User): void {
+    this.router.navigate(['/users', user.login.uuid]);
   }
 }

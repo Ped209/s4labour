@@ -27,6 +27,10 @@ th, td {
     &:hover {
         background-color: rgba(0, 0, 0, 0.02);
     }
+
+    &.clickable-row {
+        cursor: pointer;
+    }
 }
 
 .mat-column-picture, .mat-column-actions {
