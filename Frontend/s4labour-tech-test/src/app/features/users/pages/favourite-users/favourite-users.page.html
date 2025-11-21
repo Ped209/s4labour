@@ -1,1 +1,17 @@
-<p>favourite-users works!</p>
+<mat-card>
+    <mat-card-header>
+        <h1>Favourite Users</h1>
+    </mat-card-header>
+    @if( favouriteUsers().length > 0 ) {
+    <app-users-list [users]="favouriteUsers"></app-users-list>
+    }
+    <mat-card-content>
+        @if( favouriteUsers().length === 0 && !usersService.loading() ) {
+        <div class="no-data">
+            <mat-icon>heart_broken</mat-icon>
+            <h2>You have no favourite users</h2>
+            <p>Add some in the <a [routerLink]="['/users']">Users page</a></p>
+        </div>
+        }
+    </mat-card-content>
+</mat-card>

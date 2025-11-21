@@ -2,9 +2,11 @@
     <mat-card-header>
         <h1>Users</h1>
     </mat-card-header>
-    <app-users-list [users]="usersService.users"></app-users-list>
+    @if ( usersService.users().length > 0 ) {
+        <app-users-list [users]="usersService.users"></app-users-list>
+    }
     <mat-card-content>
-        @if( usersService.users().length === 0 ) {
+        @if( usersService.users().length === 0 && !usersService.loading() ) {
             No users found. 
         }
     </mat-card-content>
