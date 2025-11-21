@@ -1,39 +1,43 @@
+.filter-container {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .profile-image {
-    width: 40px;
-    height: 40px;
-    object-fit: cover; 
-    border-radius: 50%;
-}   
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 .cell-content {
   display: flex;
   align-items: center;
-  gap: 0.5rem;        
+  gap: 0.5rem;
 }
 
-th, td {
-    vertical-align: middle;
-    padding: 8px 16px;
-}
-
-.mat-cell, .mat-header-cell {
+th,
+td {
   vertical-align: middle;
-  display: table-cell;
+  padding: 8px 16px;
+    display: table-cell;
 }
 
 .mat-mdc-row {
-    transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.02);
-    }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
 
-    &.clickable-row {
-        cursor: pointer;
-    }
+  &.clickable-row {
+    cursor: pointer;
+  }
 }
 
-.mat-column-picture, .mat-column-actions {
+.mat-column-picture,
+.mat-column-actions {
   width: 1%;
   white-space: nowrap;
 }

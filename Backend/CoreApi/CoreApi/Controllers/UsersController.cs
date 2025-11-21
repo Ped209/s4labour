@@ -28,6 +28,10 @@ namespace CoreApi.Controllers
                     });
                 }
 
+                results.Results = results.Results
+                    .OrderBy(r => r?.Name?.First ?? string.Empty, StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
                 var publicDto = results.ToPublic();
                 return Ok(publicDto);
             }

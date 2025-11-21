@@ -8,7 +8,7 @@
     <mat-card-content>
         @if( favouriteUsers().length === 0 && !usersService.loading() ) {
         <div class="no-data">
-            <mat-icon>heart_broken</mat-icon>
+            <mat-icon class="favourite">heart_broken</mat-icon>
             <h2>You have no favourite users</h2>
             <p>Add some in the <a [routerLink]="['/users']">Users page</a></p>
         </div>

@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { ButtonFavourite } from '@shared/components/controls/button-favourite/button-favourite';
 import { User } from '@users/types';
 import { UsersService } from '@users/services/user.service';
@@ -8,6 +8,7 @@ import { UsersService } from '@users/services/user.service';
   imports: [ButtonFavourite],
   templateUrl: './button-favourite-user.html',
   styleUrl: './button-favourite-user.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonFavouriteUser {
   usersService = inject(UsersService);

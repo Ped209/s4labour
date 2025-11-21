@@ -40,8 +40,6 @@ export class UsersService {
     });
   }
 
-
-
   async loadUsers(): Promise<void> {
     this.loading.set(true);
     this.error.set(null);

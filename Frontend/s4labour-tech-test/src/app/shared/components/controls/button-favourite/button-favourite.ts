@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatButtonModule, MatIconModule],
   templateUrl: './button-favourite.html',
   styleUrl: './button-favourite.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonFavourite {
   @Input() isFavourite!: boolean;

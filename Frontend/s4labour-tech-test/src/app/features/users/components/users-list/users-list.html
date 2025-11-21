@@ -1,3 +1,11 @@
+<div class="filter-container">
+    <mat-form-field class="filter-field" appearance="outline">
+        <mat-label>Filter users</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search by name">
+    </mat-form-field>
+</div>
+
+@if (dataSource && (!dataSource.filteredData || dataSource.filteredData.length > 0 )) {
 <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="picture">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
@@ -31,5 +39,13 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="navigateToUser(row)" class="clickable-row"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="navigateToUser(row)" class="clickable-row">
+    </tr>
 </table>
+} @else {
+    <div class="no-data">
+        <mat-icon>people_outline</mat-icon>
+        <h2>No users found</h2>
+        <p>Try adjusting your filter criteria</p>
+    </div>
+}
