@@ -1,0 +1,1 @@
+export * from './button-favourite/button-favourite';

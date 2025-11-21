@@ -1,0 +1,3 @@
+<button matIconButton (click)="onToggle()">
+    <mat-icon [class.favourited]="isFavourite">{{ isFavourite ? 'favorite' : 'favorite_border' }}</mat-icon>
+</button>

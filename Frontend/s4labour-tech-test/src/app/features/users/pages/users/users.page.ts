@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { UsersList } from '../../components';
-import { UsersService } from '../../services';
+import { UsersList } from '@users/components';
+import { UsersService } from '@users/services';
 
 @Component({
   selector: 'app-users',

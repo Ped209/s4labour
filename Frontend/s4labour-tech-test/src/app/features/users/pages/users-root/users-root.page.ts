@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UsersService } from '../../services';
+import { UsersService } from '@users/services';
 
 @Component({
   selector: 'app-users-root',

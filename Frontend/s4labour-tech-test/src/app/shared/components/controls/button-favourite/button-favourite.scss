@@ -1,0 +1,8 @@
+mat-icon {
+  color: var(--favorite-color-inactive);
+  transition: color 0.3s ease;
+
+  &.favourited {
+    color: var(--favorite-color-active);
+  }
+}
