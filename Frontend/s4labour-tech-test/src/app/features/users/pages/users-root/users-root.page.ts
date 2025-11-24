@@ -14,6 +14,6 @@ export class UsersRootPage {
   usersStore = inject(UsersStore);
 
   constructor() {
-    this.usersStore.loadUsers();
+
   }
 }
