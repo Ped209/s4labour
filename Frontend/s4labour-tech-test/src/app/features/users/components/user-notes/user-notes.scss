@@ -1,0 +1,16 @@
+.full-width {
+  width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.note {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.03);
+    margin-bottom: 16px;
+}

@@ -60,3 +60,9 @@ body {
     'GRAD' 0,
     'opsz' 24;
 }
+
+hr {
+    border: none;
+    border-top: 1px solid var(--mat-sys-outline);
+    margin: 1rem 0;
+}

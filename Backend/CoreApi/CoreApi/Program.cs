@@ -1,4 +1,6 @@
 using CoreApi.Infrastructure.ApiClients.Users;
+using CoreApi.Infrastructure.Repositories.UserNotes;
+using CoreApi.Services.UserNotes;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +29,10 @@ builder.Services.AddCors(options =>
               .AllowCredentials();
     });
 });
+
+// Register notes repository and service (in-memory temporary store)
+builder.Services.AddSingleton<IUserNotesRepository, InMemoryUserNotesRepository>();
+builder.Services.AddScoped<IUserNotesService, UserNotesService>();
 
 var app = builder.Build();
 

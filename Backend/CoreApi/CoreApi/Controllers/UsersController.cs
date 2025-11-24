@@ -28,9 +28,7 @@ namespace CoreApi.Controllers
                     });
                 }
 
-                results.Results = results.Results
-                    .OrderBy(r => r?.Name?.First ?? string.Empty, StringComparer.OrdinalIgnoreCase)
-                    .ToList();
+                results.Results = [.. results.Results.OrderBy(r => r?.Name?.First ?? string.Empty, StringComparer.OrdinalIgnoreCase)];
 
                 var publicDto = results.ToPublic();
                 return Ok(publicDto);
