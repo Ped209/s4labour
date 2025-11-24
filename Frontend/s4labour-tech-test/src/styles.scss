@@ -66,3 +66,18 @@ hr {
     border-top: 1px solid var(--mat-sys-outline);
     margin: 1rem 0;
 }
+
+.error-snackbar {
+  @include mat.snack-bar-overrides((supporting-text-color: #593531,
+      button-color: #593531,
+      container-color: #f0a097,
+    ));
+
+  button {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+}

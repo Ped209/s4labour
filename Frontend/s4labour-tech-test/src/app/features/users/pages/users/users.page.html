@@ -2,11 +2,11 @@
     <mat-card-header>
         <h1>Users</h1>
     </mat-card-header>
-    @if ( usersService.users().length > 0 ) {
-        <app-users-list [users]="usersService.users"></app-users-list>
+    @if ( usersStore.users().length > 0 ) {
+        <app-users-list [users]="usersStore.users"></app-users-list>
     }
     <mat-card-content>
-        @if( usersService.users().length === 0 && !usersService.loading() ) {
+        @if( usersStore.users().length === 0 && !usersStore.loading() ) {
             <app-icon-message [iconMessageDetails]="{
                 title: 'No users available',
                 message: 'There are currently no users to display.',

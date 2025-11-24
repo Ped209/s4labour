@@ -1,0 +1,1 @@
+export const USER_FAVOURITES_STORAGE_KEY = 'favourite_users_ids';

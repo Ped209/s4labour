@@ -1,6 +1,6 @@
-@if(usersService.loading()) {
+@if(usersStore.loading()) {
 <app-loading-spinner></app-loading-spinner>
-} @else if(usersService.error()) {
+} @else if(usersStore.error()) {
 <app-icon-message [iconMessageDetails]="{
     title: 'Error loading users',
     message: 'There was an error while fetching the users. Please try again later.',

@@ -2,11 +2,11 @@
     <mat-card-header>
         <h1>Favourite Users</h1>
     </mat-card-header>
-    @if( favouriteUsers().length > 0 ) {
-    <app-users-list [users]="favouriteUsers"></app-users-list>
+    @if( usersStore.favouriteUsers().length > 0 ) {
+    <app-users-list [users]="usersStore.favouriteUsers"></app-users-list>
     }
     <mat-card-content>
-        @if( favouriteUsers().length === 0 && !usersService.loading() ) {
+        @if( usersStore.favouriteUsers().length === 0 && !usersStore.loading() ) {
             <app-icon-message [iconMessageDetails]="{
                 title: 'You have no favourite users',
                 message: 'Add some in the ',

@@ -31,13 +31,13 @@
         } @else if ( notes().length > 0 ) {
             @for (note of notes(); track $index) {
                 <div class="note">
+                    <small><b>{{ note.createdAt | date:'short':'':'en-GB' }}</b></small>
                     <p>{{ note.content }}</p>
-                    <small>Added on: {{ note.createdAt | date:'short':'':'en-GB' }}</small>
                 </div>
             }
         } @else {
             <app-icon-message [iconMessageDetails]="{
-                title: 'No notes available',
+                title: 'No notes',
                 message: 'There are currently no notes for this user.',
                 icon: 'note_alt'}">
             </app-icon-message>

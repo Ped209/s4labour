@@ -1,3 +1,5 @@
+import { WritableSignal } from "@angular/core";
+
 export interface User {
   gender: string;
   name: UserName;
@@ -11,7 +13,7 @@ export interface User {
   id: UserId;
   picture: UserPicture;
   nat: string;
-  isFavourite: boolean;
+  isFavourite: WritableSignal<boolean>;
 }
 
 export interface UserName {

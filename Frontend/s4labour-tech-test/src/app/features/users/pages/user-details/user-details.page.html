@@ -23,6 +23,7 @@
                     {{ user()?.location?.street?.name }}, 
                     {{ user()?.location?.city }}, {{ user()?.location?.state }}, 
                     {{ user()?.location?.country }}, {{ user()?.location?.postcode }}</p>
+                <hr/>
                 <h2>Additional Information</h2>
                 <p><strong>Date of Birth:</strong> {{ user()?.dob?.date | date }} (Age: {{ user()?.dob?.age }})</p>
                 <p><strong>Registered On:</strong> {{ user()?.registered?.date | date }} (Since: {{

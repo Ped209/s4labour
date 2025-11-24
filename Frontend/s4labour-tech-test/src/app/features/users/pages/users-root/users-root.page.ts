@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UsersService } from '@users/services';
 import { IconMessage, LoadingSpinner } from "@app/shared/components";
+import { UsersStore } from '../../stores';
 
 @Component({
   selector: 'app-users-root',
@@ -11,9 +11,9 @@ import { IconMessage, LoadingSpinner } from "@app/shared/components";
 })
 export class UsersRootPage {
 
-  usersService = inject(UsersService);
+  usersStore = inject(UsersStore);
 
   constructor() {
-    this.usersService.loadUsers();
+    this.usersStore.loadUsers();
   }
 }

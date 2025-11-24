@@ -4,11 +4,12 @@ import { MatCardModule } from '@angular/material/card';
 import { UsersNotesService } from '@users/services';
 import { IconMessage, LoadingSpinner } from "@app/shared/components";
 import { UserNote } from '@users/types';
-import { delay, finalize } from 'rxjs';
+import { finalize } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DatePipe, registerLocaleData } from '@angular/common';
+import { SnackBarService } from '@app/shared/services';
 import localeGb from '@angular/common/locales/en-GB';
 
 registerLocaleData(localeGb);
@@ -22,6 +23,7 @@ registerLocaleData(localeGb);
 })
 export class UserNotes {
   userNotesService = inject(UsersNotesService);
+  snackbarService = inject(SnackBarService);
 
   @Input() userId!: string;
 
@@ -74,7 +76,9 @@ export class UserNotes {
           this.loadNotes(this.userId);
           this.noteControl.reset();
         },
-        error: () => this.error.set('Failed to load notes.')
+        error: () => {
+          this.snackbarService.displayError('Failed to save note. Please try again.');
+        }
       });
   }
 }

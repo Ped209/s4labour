@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
 import { ButtonFavourite } from '@shared/components/controls/button-favourite/button-favourite';
 import { User } from '@users/types';
-import { UsersService } from '@users/services/user.service';
+import { UsersStore } from '@users/stores';
 
 @Component({
   selector: 'app-button-favourite-user',
@@ -11,11 +11,11 @@ import { UsersService } from '@users/services/user.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonFavouriteUser {
-  usersService = inject(UsersService);
+  usersStore = inject(UsersStore);
 
   @Input({ required: true }) user!: User;
 
   favouriteToggled(isFavourite: boolean) {
-    this.usersService.setFavourite(this.user.login.uuid, isFavourite);
+    this.usersStore.setFavourite(this.user.login.uuid, isFavourite);
   }
 }

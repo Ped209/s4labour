@@ -1,51 +1,51 @@
 <div class="filter-container">
-    <mat-form-field class="filter-field" appearance="outline">
-        <mat-label>Filter users</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Search by name">
-    </mat-form-field>
+  <mat-form-field class="filter-field" appearance="outline">
+    <mat-label>Filter users</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search by name">
+  </mat-form-field>
 </div>
 
-@if (dataSource && (!dataSource.filteredData || dataSource.filteredData.length > 0 )) {
-<table mat-table [dataSource]="dataSource" matSort>
+@if (dataSource && (!dataSource.filteredData || dataSource.filteredData.length > 0)) {
+  <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="picture">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
-        <td mat-cell *matCellDef="let user">
-            <div class="cell-content">
-                <img [src]="user.picture.thumbnail" alt="{{user.name.first}} {{user.name.last}}" class="profile-image">
-            </div>
-        </td>
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let user">
+        <img [src]="user.picture.thumbnail" 
+             [alt]="user.name.first + ' ' + user.name.last"
+             class="profile-image">
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-        <td mat-cell *matCellDef="let user"> {{user.name.first}} {{user.name.last}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let user">{{ user.name.first }} {{ user.name.last }}</td>
     </ng-container>
 
     <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let user">{{ user.email }}</td>
     </ng-container>
 
     <ng-container matColumnDef="phone">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-        <td mat-cell *matCellDef="let user"> {{user.phone}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+      <td mat-cell *matCellDef="let user">{{ user.phone }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
-        <td mat-cell *matCellDef="let user" (click)="$event.stopPropagation()">
-            <app-button-favourite-user [user]="user"></app-button-favourite-user>
-        </td>
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let user" (click)="$event.stopPropagation()">
+        <app-button-favourite-user [user]="user"></app-button-favourite-user>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="navigateToUser(row)" class="clickable-row">
-    </tr>
-</table>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns; matRowDefTrackBy: trackByUserId"
+        (click)="navigateToUser(row)" class="clickable-row"></tr>
+  </table>
 } @else {
-    <div class="no-data">
-        <mat-icon>people_outline</mat-icon>
-        <h2>No users found</h2>
-        <p>Try adjusting your filter criteria</p>
-    </div>
+  <app-icon-message [iconMessageDetails]="{
+    title: 'No users found',
+    message: 'Try adjusting your filter criteria',
+    icon: 'people_outline'
+  }"></app-icon-message>
 }
