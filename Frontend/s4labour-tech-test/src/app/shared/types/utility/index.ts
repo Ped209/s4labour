@@ -1,0 +1,1 @@
+export * from './icon-message-details.type';

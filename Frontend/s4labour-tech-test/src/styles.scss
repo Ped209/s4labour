@@ -10,6 +10,7 @@
   --mat-sys-outline: #d1d1d1;
   --favorite-color-inactive: rgba(0, 0, 0, 0.54);
   --favorite-color-active: #e91e63;
+  --error-color: #ee294d;
 }
 
 html {
@@ -58,30 +59,4 @@ body {
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
-}
-
-.no-data {
-  text-align: center;
-  margin-top: 2rem;
-
-  mat-icon {
-    font-size: 96px;
-    width: 96px;
-    height: 96px;
-    color: var(--favorite-color-inactive);
-
-    &.favourite {
-      color: var(--favorite-color-active);
-    }
-  }
-
-  a {
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--mat-sys-primary);
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }

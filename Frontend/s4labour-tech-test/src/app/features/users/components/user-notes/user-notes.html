@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-content>
+        <h2>Notes</h2>
+        @if ( usersNotesService.loading() ) {
+            <app-loading-spinner></app-loading-spinner>
+        } @else if ( usersNotesService.error() ) {
+            <app-icon-message [iconMessageDetails]="{
+                title: 'Error loading notes',
+                message: 'There was an error loading the notes for this user. Please try again later.',
+                icon: 'error',
+                iconClass: 'error'
+            }"></app-icon-message>
+        } @else if ( usersNotesService.notes().length > 0 ) {
+            <ul>
+                @for (note of usersNotesService.notes(); track $index) {
+                    <li>{{ note }}</li>
+                }
+            </ul>
+        } @else {
+            <app-icon-message [iconMessageDetails]="{
+                title: 'No notes available',
+                message: 'There are currently no notes for this user.',
+                icon: 'note_alt'
+            }"></app-icon-message>
+        }
+    </mat-card-content>
+</mat-card>

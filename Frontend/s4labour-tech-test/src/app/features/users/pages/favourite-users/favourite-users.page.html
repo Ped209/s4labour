@@ -7,11 +7,14 @@
     }
     <mat-card-content>
         @if( favouriteUsers().length === 0 && !usersService.loading() ) {
-        <div class="no-data">
-            <mat-icon class="favourite">heart_broken</mat-icon>
-            <h2>You have no favourite users</h2>
-            <p>Add some in the <a [routerLink]="['/users']">Users page</a></p>
-        </div>
+            <app-icon-message [iconMessageDetails]="{
+                title: 'You have no favourite users',
+                message: 'Add some in the ',
+                icon: 'heart_broken',
+                iconClass: 'favourite',
+                linkRoute: '/users',
+                linkText: 'Users page'
+            }"></app-icon-message>
         }
     </mat-card-content>
 </mat-card>

@@ -45,6 +45,9 @@ export class UsersService {
     this.error.set(null);
 
     try {
+      // Add 1 second delay for testing loading spinner
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       const result = await firstValueFrom(
         this.http.get<UserApiResponse>(`${environment.urls.coreApi}/Users`)
       );

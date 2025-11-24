@@ -7,7 +7,11 @@
     }
     <mat-card-content>
         @if( usersService.users().length === 0 && !usersService.loading() ) {
-            No users found. 
+            <app-icon-message [iconMessageDetails]="{
+                title: 'No users available',
+                message: 'There are currently no users to display.',
+                icon: 'people_outline'
+            }"></app-icon-message>
         }
     </mat-card-content>
 </mat-card>

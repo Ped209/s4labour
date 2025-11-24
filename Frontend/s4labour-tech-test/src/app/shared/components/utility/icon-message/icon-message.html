@@ -1,0 +1,10 @@
+<div class="message-container">
+    <mat-icon [class]="iconMessageDetails.iconClass">{{ iconMessageDetails.icon }}</mat-icon>
+    <h2>{{ iconMessageDetails.title}}</h2>
+    <p>{{ iconMessageDetails.message }} 
+        @if(iconMessageDetails.linkRoute) 
+        { 
+            <a [routerLink]="[iconMessageDetails.linkRoute]">{{ iconMessageDetails.linkText }}</a> 
+        }
+    </p>
+</div>
