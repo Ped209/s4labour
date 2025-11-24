@@ -50,8 +50,4 @@ export class UsersList {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  trackByUserId(index: number, user: User): string {
-    return user.login.uuid;
-  }
 }
