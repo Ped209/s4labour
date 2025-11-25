@@ -8,7 +8,8 @@
 :root {
   --mat-table-background-color: transparent;
   --mat-sys-outline: #d1d1d1;
-  --favorite-color-inactive: rgba(0, 0, 0, 0.54);
+  --icon-grey: rgba(0, 0, 0, 0.54);
+  --favorite-color-inactive: var(--icon-grey);
   --favorite-color-active: #e91e63;
   --error-color: #ee294d;
 }

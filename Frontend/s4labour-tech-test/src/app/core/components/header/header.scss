@@ -31,4 +31,25 @@
             }
         }
     }
+
+    .navigation-bar {
+        height: 100%;
+
+        button {
+            height: 100%;
+            font-weight: 600;
+            border-radius: 0;
+            border-bottom: 3px solid transparent;
+            transition: border-bottom-color 0.3s ease, background-color 0.3s ease;
+
+            mat-icon {
+                color: var(--icon-grey);
+            }
+
+            &.active {
+                border-bottom: 3px solid var(--mat-sys-primary);
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
 }

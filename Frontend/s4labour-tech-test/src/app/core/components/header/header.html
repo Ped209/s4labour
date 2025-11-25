@@ -7,11 +7,11 @@
         </div>
     </div>
     <div class="navigation-bar">
-        <button matButton aria-label="Home" routerLink="/users">
+        <button matButton aria-label="Home" routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <mat-icon>face</mat-icon>
             Users
         </button>
-        <button matButton aria-label="Contracts" routerLink="/users/favourites">
+        <button matButton aria-label="Contracts" routerLink="/users/favourites" routerLinkActive="active">
             <mat-icon>favorite</mat-icon>
             Favourites
         </button>
