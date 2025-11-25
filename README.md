@@ -6,6 +6,11 @@ To start the frontend:
 
 change directory to: "s4labour\Frontend\s4labour-tech-test"
 
+run 
+``` bash
+npm install
+```
+
 then run: 
 
 ```bash
